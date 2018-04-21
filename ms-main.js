@@ -1020,7 +1020,7 @@ function runBulkQuery(q, n, el) {
 }
 
 //--RUN QUERY--//
-//--called by initMap(), .filter -> "click", marker -> "click"--// 
+//--called by initMap(), .filter -> "click", marker -> "click", table -> "select", chart -> "select"--// 
 
 function runQuery(q, n, el) {
     var q = (!q) ? g_queryStringMinimumValues : q;
@@ -1689,16 +1689,14 @@ Table.prototype.loadData = function(o) {
     if (this.chartType == 'Table') {
         this.setView_();
         this.setTable_();
-        this.setListener_(this.vis);
-        this.draw_();
     }
     if (this.chartType == 'Histogram') {
         this.setHistogramColumns_(this.data);
         this.arrayToDataTable_();
         this.setHistogram_();
-        this.setListener_(this.vis);
-        this.draw_();
     }
+    this.setListener_(this.vis);
+    this.draw_();
 }
 //external call from click listener on infowindow
 Table.prototype.setSelection = function(n) {
@@ -2195,10 +2193,4 @@ $(document).ready(function() {
     $(window, document, 'body').off('resize').on('resize', function() {
         scrollSize();
     });
-    var $hostlink = $('img[alt="www.000webhost.com"]').parent();
-    $hostlink.parent().css({
-            'left': '777000px'
-        });
-    $hostlink.appendTo('#hostlink');
-
 }); //end doc ready
