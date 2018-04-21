@@ -301,8 +301,8 @@ body {
 }
 /*icons*/
  .search-searchbox .search-clear, .search-icon {
-    background-image:url(../images/mobile9.png);
-    background-size:264px 748px;
+    /*background-image:url(../images/mobile9.png);
+    background-size:264px 748px;*/
     height:24px;
     width:24px;
     margin:auto;
@@ -310,7 +310,7 @@ body {
 }
 @media (-webkit-min-device-pixel-ratio:1.2), (min-resolution:1.2dppx), (min-resolution:116dpi) {
     .search-searchbox .search-clear, .search-icon {
-        background-image:url(../images/mobile9_2x.png)
+        /*background-image:url(../images/mobile9_2x.png)*/
     }
 }
 .search-icon {
@@ -468,7 +468,7 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
     padding:0 4px
 }
 .search-close:hover {
-    text-decoration:none!important
+    text-decoration:none
 }
 .search-b-inner {
     font-size:16px;
