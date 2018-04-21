@@ -50,7 +50,7 @@ var g_zoomTimer;
 
 // HTML5 GEOLOCATION
 var g_geoPosition;
-var g_geoError = false;
+
 // REVERSE GEOCODE
 var g_geoTimer;
 // IS MOBILE?
@@ -637,39 +637,11 @@ function smoothZoom(map, n, c, s) {
 //--called by initMap()--//
 
 function handleLocationError(browserHasGeolocation, infowindow, pos) {
-    // hides the html elements that rely on geocode
-    g_geoError = true;
-    // if the code worked this will show #my-location and div#card-my-location-fab fab
-    showGeoLinks();
     // TO DO: add cookie "Dont tell me again" to prevent this message from showing up every load of page
     //infowindow.setPosition(pos);
     //infowindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
     console.log(browserHasGeolocation ? 'Warning: The Geolocation service failed.' : 'Warning: Your browser doesn\'t support geolocation.');
     //infoWindow.open(map);
-}
-
-//--SHOW GEOCODE RELATED ELEMENTS ON PAGE--//
-//--called by handleLocationError()--//
-
-function showGeoLinks() {
-    if (!g_geoError) {
-        // reveal the areas 
-        $('#card-my-location-fab, #my-location').removeClass('hide');
-        // add the click function
-        $('.card-my-location-fab-inner, #my-location').click(function() {
-            whereAmI();
-        });
-    }
-}
-
-//--WHERE AM I--//
-//--called by showGeoLinks()--//
-
-function whereAmI() {
-    if (!g_geoPosition) return;
-    map.panTo(g_geoPosition);
-    //console.log('[DEV] whereAmI setting zoom');
-    zoom(13);
 }
 
 //--REVERSE GEOCODE--//
@@ -818,10 +790,6 @@ function handleDown() {
     $('.card-body').scrollTop(0); //resets the scrolling to top
     showHideToggle('hide', 'show');
     scrollSize();
-    $('.card-my-location-fab-outer').animate({
-            top: '-76px',
-            opacity: '1'
-        }, 200, function() {});
     // remove the data credit from the map
     resetCard();
 }
