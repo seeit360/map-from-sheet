@@ -1,0 +1,83 @@
+/*override default css for mm-menu*/
+ .mm-menu_theme-white .mm-navbar a, .mm-menu_theme-white .mm-navbar>*, .mm-menu_theme-white .mm-btn:after, .mm-menu_theme-white .mm-btn:before {
+    color: rgba(0, 0, 0, .6);
+}
+.mm-navbars_bottom .mm-navbar a:hover, .mm-navbars_bottom .mm-navbar span:hover {
+    color: #ffffff;
+    background-color: #3a84df;
+}
+.mm-navbar {
+    line-height: 2.5em;
+    height: 55px;
+}
+.mm-navbar__breadcrumbs>* {
+    padding: 12px 3px;
+}
+/* two rows in menu main header*/
+ .mm-navbar__title:not([href]) {
+    margin-top: -7px;
+}
+.mm-navbar__title:not([href]) > div {
+    text-align:center;
+    width:100%;
+    font-size:0.7rem;
+    height: 1em;
+}
+.mm-navbar__title:not([href]) > div > span {
+    display: block;
+    margin-top:-24px;
+    height:1em;
+}
+.mm-btn {
+    height: 55px;
+}
+.mm-panel:before {
+    height: 26px;
+}
+.mm-panel:after {
+    height: 0px;
+}
+.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview {
+    margin-top: -20px;
+    /* -webkit-margin-before: -20px; */
+    -webkit-margin-after: 0;
+}
+.mm-counter {
+    right: 30px;
+}
+.mm-menu_selected-hover .mm-listitem>a.mm-btn_fullwidth+a, .mm-menu_selected-hover .mm-listitem>a.mm-btn_fullwidth+span, .mm-menu_selected-hover .mm-listitem>a:not(.mm-btn_fullwidth), .mm-menu_selected-parent .mm-listitem>a.mm-btn_fullwidth+a, .mm-menu_selected-parent .mm-listitem>a.mm-btn_fullwidth+span, .mm-menu_selected-parent .mm-listitem>a:not(.mm-btn_fullwidth) {
+    transition: padding 0.3s, background .3s ease;
+}
+.mm-listitem a, .mm-listitem span {
+    transition: padding 0.3s, background 0.3s ease;
+}
+.mm-listitem > span:hover, .mm-listitem > a:hover, .mm-listitem a:hover, .mm-listitem a:hover + span {
+    color: rgba(58, 132, 223, 1);
+    padding-left: 24px;
+}
+.mm-menu_theme-white.mm-menu_selected-hover .mm-listitem > span.not(id="charts"):hover, .mm-menu_theme-white.mm-menu_selected-hover .mm-listitem > span.not(id="table"):hover {
+    background: rgba(0, 0, 0, .03);
+}
+.mm-listitem_vertical>.mm-btn_next {
+    box-sizing: border-box;
+    height: 60px;
+    bottom: auto;
+}
+.mm-listview {
+    font: inherit;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+.mm-listview p{
+    cursor: default;
+}
+.mm-listitem_vertical>.mm-panel {
+    padding: 0;
+}
+.mm-menu_navbar_bottom-1 .mm-panels {
+    bottom: 50px;
+}
+.mm-menu_navbar_top-1 .mm-panels {
+    top: 50px;
+}

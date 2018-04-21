@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117917069-1"></script>
+
+        <meta charset="UTF-8">
+        <title>US Mass Shootings, 1982-2018</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="HandheldFriendly" content="true" />
+
+        <!-- Google fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,600,700,800' rel='stylesheet' type='text/css'>
+        <!-- https://fontawesome.com/icons?d=gallery&m=free -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+        <!-- Resource style -->
+        <!-- main css style -->
+        <link rel="stylesheet" href="css/ms-main.css">
+        <!-- jquery -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- mmenu css -->
+        <link type="text/css" href="mmenu/jquery.mmenu.all.css" rel="stylesheet" />
+        <!-- mmenu css overrides -->
+        <link type="text/css" href="css/ms-mmenu-layout.css" rel="stylesheet" />
+        <!-- mmenu js -->
+        <script type="text/javascript" src="mmenu/jquery.mmenu.all.js"></script>
+        <!-- https://github.com/tigt/mini-svg-data-uri -->
+        <script type="text/javascript" src="js/mini-svg-data-uri.js"></script>
+        <!-- google js api -->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <!-- google charts -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <!-- google maps -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOiuE-IJmTBMoYSiTCItKpm_E7q2k8qlE&libraries=places"></script>
+        <!-- maps marker clusterer plugin -->
+        <script type="text/javascript" src="js/ms-g-maps-marker-clusterer.js"></script>
+        <!-- Modernizr -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
+        <!-- main js -->
+        <script type="text/javascript" src="js/ms-main.js"></script>
+    </head>
+
+    <body>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-117917069-1');
+        </script>
+        <div id="mmwrapper">
+            <!-- searchbox html for map -->
+            <!-- this element is pulled in by the map on initMap() -->
+            <div id="search" class="search-floating-searchbox-parent">
+                <div class="search-searchbox" id="search-searchbox">
+                    <div class="search-initial-searchbox-wrapper">
+                        <div class="search-searchbox-area search-searchbox-shadow" role="search" tabindex="-1">
+                            <div role="button" class="search-searchbox-settings-button">
+                                <div title="Open menu" class="search-searchbox-settings-button-inner hamburger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path fill="rgba(0,0,0,.5)" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"
+                                        class=""></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <form id="search-searchboxform" onsubmit="return false;" action="#">
+                                <table cellspacing="0" cellpadding="0" class="search-searchboxinput">
+                                    <tbody>
+                                        <tr>
+                                            <td class="search-a">
+                                                <input autocomplete="off" id="search-searchboxinput" tabindex="1" class="" dir="ltr" spellcheck="false" style="border: none;padding: 13px 0 9px 0;margin: 0 50px;height: auto;width: calc(100% - 53px);" placeholder="Search US Mass Shootings">
+                                            </td>
+                                            <td class="search-b">
+                                                <div class="search-b-inner" dir="ltr">
+                                                    <a class="search-close close" href="#">
+                                                        	<span class="search-clear" title="Clear search"></span>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- mm.nav html for page -->
+            <nav id="menu" class="invisible">
+                <ul>
+                    <!-- Filters -->
+                    <li>
+                        <!-- a span above the <ul>  is the title for the section -->
+                        	<span><i class="fas fa-lg fa-fw fa-filter"></i> Map Filters</span>
+                        <ul id="filters" class="Vertical">
+                            <li>
+                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-map-pin"></i> By State</span>
+                                <ul class="filter state">
+                                    <li><a> Alabama</a>
+                                    </li>
+                                    <li><a> Alaska</a>
+                                    </li>
+                                    <li><a> Arizona</a>
+                                    </li>
+                                    <li><a> Arkansas</a>
+                                    </li>
+                                    <li><a> California</a>
+                                    </li>
+                                    <li><a> Colorado</a>
+                                    </li>
+                                    <li><a> Connecticut</a>
+                                    </li>
+                                    <li><a> D.C.</a>
+                                    </li>
+                                    <li><a> Delaware</a>
+                                    </li>
+                                    <li><a> Florida</a>
+                                    </li>
+                                    <li><a> Georgia</a>
+                                    </li>
+                                    <li><a> Hawaii</a>
+                                    </li>
+                                    <li><a> Idaho</a>
+                                    </li>
+                                    <li><a> Illinois</a>
+                                    </li>
+                                    <li><a> Indiana</a>
+                                    </li>
+                                    <li><a> Iowa</a>
+                                    </li>
+                                    <li><a> Kansas</a>
+                                    </li>
+                                    <li><a> Kentucky</a>
+                                    </li>
+                                    <li><a> Louisiana</a>
+                                    </li>
+                                    <li><a> Maine</a>
+                                    </li>
+                                    <li><a> Maryland</a>
+                                    </li>
+                                    <li><a> Massachusetts</a>
+                                    </li>
+                                    <li><a> Michigan</a>
+                                    </li>
+                                    <li><a> Minnesota</a>
+                                    </li>
+                                    <li><a> Mississippi</a>
+                                    </li>
+                                    <li><a> Missouri</a>
+                                    </li>
+                                    <li><a> Montana</a>
+                                    </li>
+                                    <li><a> Nebraska</a>
+                                    </li>
+                                    <li><a> Nevada</a>
+                                    </li>
+                                    <li><a> New Hampshire</a>
+                                    </li>
+                                    <li><a> New Jersey</a>
+                                    </li>
+                                    <li><a> New Mexico</a>
+                                    </li>
+                                    <li><a> New York</a>
+                                    </li>
+                                    <li><a> North Carolina</a>
+                                    </li>
+                                    <li><a> North Dakota</a>
+                                    </li>
+                                    <li><a> Ohio</a>
+                                    </li>
+                                    <li><a> Oklahoma</a>
+                                    </li>
+                                    <li><a> Oregon</a>
+                                    </li>
+                                    <li><a> Rhode Island</a>
+                                    </li>
+                                    <li><a> South Carolina</a>
+                                    </li>
+                                    <li><a> South Dakota</a>
+                                    </li>
+                                    <li><a> Tennessee</a>
+                                    </li>
+                                    <li><a> Texas</a>
+                                    </li>
+                                    <li><a> Utah</a>
+                                    </li>
+                                    <li><a> Vermont</a>
+                                    </li>
+                                    <li><a> Virginia</a>
+                                    </li>
+                                    <li><a> Washington</a>
+                                    </li>
+                                    <li><a> West Virgina</a>
+                                    </li>
+                                    <li><a> Wisconsin</a>
+                                    </li>
+                                    <li><a> Wyoming</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-calendar-alt"></i> By Year</span>
+                                <ul class="filter year">
+                                    <li><a> 2018</a>
+                                    </li>
+                                    <li><a> 2017</a>
+                                    </li>
+                                    <li><a> 2016</a>
+                                    </li>
+                                    <li><a> 2015</a>
+                                    </li>
+                                    <li><a> 2014</a>
+                                    </li>
+                                    <li><a> 2013</a>
+                                    </li>
+                                    <li><a> 2012</a>
+                                    </li>
+                                    <li><a> 2011</a>
+                                    </li>
+                                    <li><a> 2010</a>
+                                    </li>
+                                    <li><a> 2009</a>
+                                    </li>
+                                    <li><a> 2008</a>
+                                    </li>
+                                    <li><a> 2007</a>
+                                    </li>
+                                    <li><a> 2006</a>
+                                    </li>
+                                    <li><a> 2005</a>
+                                    </li>
+                                    <li><a> 2004</a>
+                                    </li>
+                                    <li><a> 2003</a>
+                                    </li>
+                                    <li><a> 2002</a>
+                                    </li>
+                                    <li><a> 2001</a>
+                                    </li>
+                                    <li><a> 2000</a>
+                                    </li>
+                                    <li><a> 1999</a>
+                                    </li>
+                                    <li><a> 1998</a>
+                                    </li>
+                                    <li><a> 1997</a>
+                                    </li>
+                                    <li><a> 1996</a>
+                                    </li>
+                                    <li><a> 1995</a>
+                                    </li>
+                                    <li><a> 1994</a>
+                                    </li>
+                                    <li><a> 1993</a>
+                                    </li>
+                                    <li><a> 1992</a>
+                                    </li>
+                                    <li><a> 1991</a>
+                                    </li>
+                                    <li><a> 1990</a>
+                                    </li>
+                                    <li><a> 1989</a>
+                                    </li>
+                                    <li><a> 1988</a>
+                                    </li>
+                                    <li><a> 1987</a>
+                                    </li>
+                                    <li><a> 1986</a>
+                                    </li>
+                                    <li><a> 1985</a>
+                                    </li>
+                                    <li><a> 1984</a>
+                                    </li>
+                                    <li><a> 1983</a>
+                                    </li>
+                                    <li><a> 1982</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-chart-pie"></i> By Statistics</span>
+                                <ul>
+                                    <li>
+                                        	<span id="charts" class="center">
+											<span class="term">Incident</span> 
+                                        <p class="menu-horizontal-line"></p>
+
+                                        <p><span id="chart-venue"></span>
+                                        </p>
+                                        <p class="menu-horizontal-line"></p>
+
+                                        <p><span id="chart-legal"></span>
+                                        </p>
+                                        <p class="menu-horizontal-line"></p>
+
+                                        <p><span id="chart-type"></span>
+                                        </p>
+                                        <p class="menu-horizontal-line"></p>
+
+                                        <p><span id="chart-ended"></span>
+                                        </p>
+                                        <p class="menu-horizontal-line"></p>
+
+                                        	<span class="term">Suspect</span>
+                                        <p class="menu-horizontal-line"></p>
+
+                                        <!--<p><span id="chart-age"></span></p>-->
+                                        <!--<p class="menu-horizontal-line"></p>-->
+
+                                        <p><span id="chart-mental-health"></span>
+                                        </p>
+                                        <p class="menu-horizontal-line"></p>
+
+                                        <p><span id="chart-race"></span>
+                                        </p>
+                                        <p class="menu-horizontal-line"></p>
+
+                                        <p><span id="chart-gender"></span>
+                                        </p>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-list"></i> By Incident</span>
+                                <ul class="list-container">
+                                    <li><span id="table"></span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        	<span><i class="fas fa-lg fa-fw fa-book"></i> Glossary</span>
+                        <ul>
+                            <li>
+                                <p class="first last">
+                                    	<span class="term">Mass shooting:</span> 
+                                    	<span class="def">An incident involving firearms-related violence in which 4+ people*, not including the perpetrator, are killed or injured.</span>
+                                    	<span class="small">*1982-2012. In 2013 the number was reduced to 3+ people</span>
+                                </p>
+                                <p class="menu-horizontal-line"></p>
+                                <p class="first last">
+                                    	<span class="term">Mass killing:</span> 
+                                    	<span class="def">An incident involving violence in which 4+ people*, not including the perpetrator, are killed.</span>
+                                    	<span class="small">*1982-2012. In 2013 the number was reduced to 3+ people</span>
+                                </p>
+                                <p class="menu-horizontal-line"></p>
+                                <p class="first last">
+                                    	<span class="term">Spree shooting:</span> 
+                                    	<span class="def">An incident involving firearms-related violence at multiple locations with multiple fatalities or injuries</span>
+                                </p>
+                                <p class="menu-horizontal-line"></p>
+                                <p class="first last">
+                                    	<span class="term">Spree killing:</span> 
+                                    	<span class="def">An incident involving violence at multiple locations with multiple fatalities</span>
+                                </p>
+                                <p class="menu-horizontal-line"></p>
+                                <p class="first">
+                                    	<span class="term">Handgun:</span> 
+                                    	<span class="def">A gun designed for use by one hand, especially a pistol or revolver.</span>
+                                </p>
+                                <p class="last footnote">
+                                    	<span class="small light italic">Synonyms:</span> 
+                                    	<span class="small">Pistol, revolver, Glock, gun, sidearm, six-shooter, .38, derringer</span>
+                                </p>
+                                <p class="menu-horizontal-line"></p>
+                                <p class="first">
+                                    	<span class="term">Rifle:</span> 
+                                    	<span class="def">A gun, especially one fired from shoulder level, having a long spirally grooved barrel intended to make a bullet spin and thereby have greater accuracy over a long distance.</span>
+                                </p>
+                                <p class="last footnote">
+                                    	<span class="small light italic">Synonyms:</span> 
+                                    	<span class="small">Firearm, gun, shotgun, 30-30, bolt-action rifle, pump-action shotgun, lever-action rifle, hunting rifle</span>
+                                </p>
+                                <p class="menu-horizontal-line"></p>
+                                <p class="first last">
+                                    	<span class="term">Semiautomatic:</span> 
+                                    	<span class="def">A gun that uses the energy of the fired cartridge to cycle the action of the firearm and advance the next available cartridge into position for firing. One cartridge is fired each time the trigger of a semi-automatic weapon is pulled.</span> 
+                                </p>
+                                <p class="menu-horizontal-line"></p>
+                                <p class="first">
+                                    	<span class="term">Rifle (assault):</span> 
+                                    	<span class="def">Assault rifles are a short, compact, selective-fire firearm that must have at least all the following characteristics:</span>
+                                </p>
+                                <p class="ul">
+                                    	<span class="li">It must be capable of selective fire.</span>
+                                    	<span class="li">It must have an intermediate-power cartridge: more power than a pistol but less than a standard rifle or battlefield rifle.</span>
+                                    	<span class="li">Its ammunition must be supplied from a detachable box magazine.</span>
+                                    	<span class="li">It must have an effective range of at least 300 metres (330 yards).</span>
+                                </p>
+                                <p class="last footnote">
+                                    	<span class="small light italic">Examples:</span> 
+                                    	<span class="small">AK-47, M16, 5.56x45mm NATO</span>
+                                </p>
+                                <p class="menu-horizontal-line"></p>
+                                <p class="first">
+                                    	<span class="term">Rifle (assault-style):</span> 
+                                    	<span class="def"><span class="italic">Assault style</span> rifles have all the aspects of <span class="italic">assault</span> rifles with one diference:</span>
+                                </p>
+                                <p class="ul">
+                                    	<span class="li">It <span class="italic">does not</span> have selective fire capabilites.</span>
+                                </p>
+                                <p class="last footnote">
+                                    	<span class="small light italic">Examples:</span> 
+                                    	<span class="small">AR-15 variants</span>
+                                </p>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        	<span id="credits"><i class="far fa-lg fa-fw fab fa-creative-commons"></i> Credits</span>
+                        <ul class="Vertical">
+                            <li>
+                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-search"></i> Research/Data</span>
+                                <ul>
+                                    <li>
+                                        	<a href="https://www.motherjones.com/politics/2012/12/mass-shootings-mother-jones-full-data/" target="_blank">Mother Jones</a>
+                                    </li>
+                                    <li>
+                                        	<a href="http://www.gunviolencearchive.org/" target="_blank">Gun Violence Archive</a>
+                                    </li>
+                                    <li>
+                                        	<a href="http://timelines.latimes.com/deadliest-shooting-rampages/" target="_blank">L.A Times</a>
+                                    </li>
+                                    <li>
+                                        	<a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-code"></i> Code</span>
+                                <ul>
+                                    <li>
+                                        	<a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank">Google Maps Javascript API</a>
+                                    </li>
+                                    <li>
+                                        	<a href="https://developers.google.com/maps/documentation/javascript/marker-clustering" target="_blank">MarkerClusterer Library V3 for Google Maps</a>
+                                    </li>
+                                    <li>
+                                        	<a href="http://api.jquery.com/" target="_blank">JQuery Library</a>
+                                    </li>
+                                    <li>
+                                        	<a href="http://mmenu.frebsite.nl/" target="_blank">JQuery mmenu plugin</a>
+                                    </li>
+                                    <li>
+                                        	<a href="https://fontawesome.com/" target="_blank">Font Awesome 5</a>
+                                    </li>
+                                    <li>
+                                        	<a href="https://github.com/tigt/mini-svg-data-uri" target="_blank">Taylor Hunt&apos;s mini-svg-data-uri.js</a>
+                                    </li>
+                                    <li>
+                                        	<a href="https://fonts.google.com/specimen/Roboto" target="_blank">Google Fonts</a>
+                                    </li>
+                                    <li>
+                                        	<a href="https://developers.google.com/chart/interactive/docs/reference" target="_blank">Google Charts API</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                	<span class="dropdown"><i class="far fa-lg fa-fw fa-hdd"></i> Hosting</span>
+                                <ul>
+                                    <li>
+                                        	<a href="https://docs.google.com/spreadsheets/d/1BCirA2bPNdLBt7WT2wfNF_tw19PK3fQo-j51MKeQ9sc/edit?usp=sharing" target="_blank">Dataset on Google Sheets</a>
+                                    </li>
+                                    <li id="hostlink"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        	<span><i class="far fa-lg fa-fw fa-question-circle"></i> Help</span>
+                        <ul>
+                            <li>
+                                <p class="first last">
+                                    	<span class="term">Search bar:</span> 
+                                    	<span class="def">Search cities using the search bar.</span>
+                                </p>
+                                <p class="first last">
+                                    	<span class="def">Text searches can be very specific, or more general in nature.</span>
+                                </p>
+                                <p class="first last">
+                                    	<span class="def">Specific e.g. &quot;<span class="italic">101 California Street</span>&quot;</span>
+                                </p>
+                                <p class="first last">
+                                    	<span class="def">General e.g. &quot;<span class="italic">Seattle</span>&quot; or &quot;<span class="italic">90034</span>&quot;</span>
+                                </p>
+
+                                <p class="menu-horizontal-line"></p>
+
+                                <p class="first last">
+                                    	<span class="term">Charts:</span> 
+                                    	<span class="def">Charts and legends are links that will filter the map. Tags on the  incidents themselves will reload the map with that filter.</span>
+                                </p>
+
+                                <p class="menu-horizontal-line"></p>
+
+                                <p class="first last">
+                                    	<span class="term">Reset map:</span> 
+                                    	<span class="def">You may reset the map to the full statistics with the &quot;Reset Map&quot; button at the bottom of the menu.</span>
+                                </p>
+
+                                <p class="menu-horizontal-line"></p>
+
+                                <p class="first last" style="padding-bottom: 23px;margin-bottom: 0;">
+                                    	<span class="term">Google maps link:</span> 
+                                    	<span class="def">There is a direct link to google maps at the bottom of the data card, if you are interested in exploring 3D, Satallite or 360 degree views of the incident location.</span>
+                                </p>
+
+                            </li>
+                            <li>
+                                	<a href="javascript:alert('coming soon')" target="_blank"><i class="fas fa-lg fa-fw fa-plus"></i> Add a new shooting</a>
+                            </li>
+                            <li>
+                                	<a href="javascript:alert('coming soon')" target="_blank"><i class="fas fa-lg fa-fw fa-comment"></i> Contact Us About Error</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- data card/map -->
+            <div class="card-detail-container">
+                <!-- animated card -->
+                <div class="card-detail-wrapper down">
+                    <!-- google map -->
+                    <div class="map">
+                        <!-- google map canvas -->
+                        <div id="map-canvas"></div>
+                    </div>
+                    <!-- data card / top visible -->
+                    <div class="preview-handle">
+
+                        <!-- locations fab (currently unused - no https)-->
+                        <div id="card-my-location-fab" class="card-my-location-fab hide">
+                            <div>
+                                <div id="card-my-location-fab-outer" class="card-my-location-fab-outer">
+                                    <div class="card-my-location-fab-inner search-icon search-icon-location-fab"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- near me description -->
+                        <div class="card-handle show">
+                            <div class="card-handle-outer">
+                                <div class="card-handle-text text-truncate">
+                                    	<i class="fas fa-lg fa-fw fa-compass"></i>
+                                    	<span class="of"></span>
+                                </div>
+                            </div>
+                            <div class="card-handle-outer hide">
+                                <div class="card-handle-text text-truncate">
+                                    <a href="#/" title="Reset map" class="reset-map">
+                                        	<i class="fas fa-fw fa-undo"></i>
+                                    </a>
+                                    	<span class="card-filter-icon">
+										<i class="fas fa-fw fa-filter"></i>
+									</span> 
+                                    	<span id="filter-on"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- X (close card) -->
+                        <div id="card-close-x" class="card-close-x hide">
+                            <div>
+                                <div title="Close map" role="button" tabindex="0" class="card-close-x-inner search-icon search-icon-close close">&times;</div>
+                            </div>
+                        </div>
+                        <!-- popup card -->
+                        <div class="card-popup hide">
+                            <div class="card-underscroll-header">
+                                <!-- underscroll group -->
+                                <div class="card-underscroll-title-group">
+                                    <!-- casename/title -->
+                                    <div class="card-title card-title-truncate bold">
+                                        	<span class="card-spinner show" style="color:rgba(0,0,0,.5)">
+											<i class="fas fa-spinner fa-pulse"></i> Loading...
+										</span>
+                                        	<span class="card-main-title">
+											<span class="data-fatalities"></span><span class="data-injured"></span>
+                                        </span>
+                                    </div>
+                                    <!-- sub-titles -->
+                                    <div class="card-title-sub-group">
+                                        <!-- location / date -->
+                                        	<span class="card-location-date-group">
+											<!-- location (city, state) --> 
+											<span class="data-location"> </span>
+                                        <!-- date -->
+                                        	<span class="card-date">
+												<span class="data-date bold"> </span>
+                                        </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- card body (scrollable)-->
+                            <div class="card-body scrollable invisible">
+                                <!-- card tags -->
+                                <div class="card-tags"></div>
+
+                                <!-- images -->
+                                <div class="card-carousel"></div>
+
+                                <!-- top stats (above the fold) -->
+                                <div class="card-top-stats">
+                                    <!-- casename -->
+                                    <div class="card-casename">
+                                        	<span class="data-casename bold"> </span> 
+                                    </div>
+                                </div>
+
+                                <!-- summary -->
+                                <div class="card-details">
+                                    <!--summary -->
+                                    <div class="data-incident-summary"></div>
+                                    <!-- ref links -->
+                                    <div class="card-news-sources"></div>
+                                </div>
+
+                                <!-- victims header -->
+                                <div class="card-section-subheader card-section-subheader-large-text">
+                                    	<span>Lives ended</span>
+                                </div>
+                                <!-- list of victims -->
+                                <div class="card-details">
+                                    <ol class="card-victim-list">
+
+                                    </ol>
+                                </div>
+
+                                <!-- shooters header -->
+                                <div class="card-section-subheader card-section-subheader-large-text">
+                                    	<span>Shooter</span><span class="data-shooter-plural"></span>
+                                </div>
+                                <!-- shooters details -->
+                                <div class="card-details">
+
+                                    <!-- shooter 1 -->
+                                    <div class="card-shooter1-details">
+                                        	<span class="data-shooter1-name"> </span><span>,</span> 
+                                        	<span class="data-shooter1-age"> </span>
+                                        	<span class="data-shooter1-race"> </span><span>,</span> 
+                                        	<span class="data-shooter1-gender"> </span>
+                                    </div>
+
+                                    <!-- shooter 2 -->
+                                    <div class="card-shooter2-details hide">
+                                        	<span class="data-shooter2-name"> </span><span>,</span> 
+                                        	<span class="data-shooter2-age"> </span>
+                                        	<span class="data-shooter2-race"> </span><span>,</span> 
+                                        	<span class="data-shooter2-gender"> </span>
+                                    </div>
+
+                                    <!-- conclusion -->
+                                    <div>
+                                        	<span class="bold">Conclusion:</span> 
+                                        	<span class="data-incident-ended"></span>
+                                    </div>
+
+                                    <!-- mental health -->
+                                    <div>
+                                        	<span class="bold">Mental health issues?</span> 
+                                        	<span class="data-mental-health-issues"> </span>
+                                    </div>
+
+                                    <!-- mental history -->
+                                    <div class="card-mental-history-details hide">
+                                        <div class="data-mental-health-details"></div>
+                                        <div class="card-mental-health-sources"></div>
+                                    </div>
+                                </div>
+
+                                <!-- weapons header -->
+                                <div class="card-section-subheader card-section-subheader-large-text">
+                                    	<span>Weapons</span>
+                                </div>
+                                <!-- weapons details -->
+                                <div class="card-details">
+                                    <!-- simple weapons type-->
+                                    <div>
+                                        	<span class="bold">Weapon used:</span> 
+                                        	<span class="data-weapons-type-list"> </span>
+                                    </div>
+                                    <!-- legally obtained -->
+                                    <div>
+                                        	<span class="bold">Legally obtained?</span> 
+                                        	<span class="data-weapons-legal"> </span>
+                                    </div>
+                                    <!-- obtained details -->
+                                    <div>
+                                        	<span class="bold">How/Where weapons obtained?</span> 
+                                        	<span class="data-weapons-obtained"> </span>
+                                    </div>
+                                    <!-- specific makes/models/manufacturers -->
+                                    <div>
+                                        	<span class="bold">Makes/Models/Styles:</span>
+                                        	<span class="data-weapons-makes-models-manufacturers"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .card-body -->
+
+                        <!-- buttons -->
+                        <div class="card-buttons-table-fixed hide">
+                            <div class="card-buttons-table">
+                                <div class="card-buttons">
+                                    <a class="hamburger card-button">
+                                        	<i class="fas fa-2x  fa-bars"> </i>
+                                    </a>
+                                    <a target="_blank" href="#" class="gmaps card-button">
+                                        	<i class="fas fa-2x fa-map-marker-alt"> </i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
