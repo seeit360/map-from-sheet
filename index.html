@@ -32,7 +32,7 @@
         <!-- google charts -->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <!-- google maps -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOiuE-IJmTBMoYSiTCItKpm_E7q2k8qlE&libraries=places"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOiuE-IJmTBMoYSiTCItKpm_E7q2k8qlE&amp;libraries=places"></script>
         <!-- maps marker clusterer plugin -->
         <script type="text/javascript" src="ms-g-maps-marker-clusterer.js"></script>
         <!-- Modernizr -->
@@ -61,8 +61,8 @@
                             <div role="button" class="search-searchbox-settings-button">
                                 <div title="Open menu" class="search-searchbox-settings-button-inner hamburger">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                        <path fill="rgba(0,0,0,.5)" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"
-                                        class=""></path>
+                                        <path fill="rgba(0,0,0,.5)" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z">
+					</path>
                                     </svg>
                                 </div>
                             </div>
@@ -76,7 +76,12 @@
                                             <td class="search-b">
                                                 <div class="search-b-inner" dir="ltr">
                                                     <a class="search-close close" href="#">
-                                                        	<span class="search-clear" title="Clear search"></span>
+                                                        <span class="search-clear" title="Clear search">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+									<path fill="rgba(0,0,0,.5)" d="M217.5 256l137.2-137.2c4.7-4.7 4.7-12.3 0-17l-8.5-8.5c-4.7-4.7-12.3-4.7-17 0L192 230.5 54.8 93.4c-4.7-4.7-12.3-4.7-17 0l-8.5 8.5c-4.7 4.7-4.7 12.3 0 17L166.5 256 29.4 393.2c-4.7 4.7-4.7 12.3 0 17l8.5 8.5c4.7 4.7 12.3 4.7 17 0L192 281.5l137.2 137.2c4.7 4.7 12.3 4.7 17 0l8.5-8.5c4.7-4.7 4.7-12.3 0-17L217.5 256z">
+									</path>
+								</svg>
+							</span>
                                                     </a>
                                                 </div>
                                             </td>
@@ -96,247 +101,342 @@
                     <!-- Filters -->
                     <li>
                         <!-- a span above the <ul>  is the title for the section -->
-                        	<span><i class="fas fa-lg fa-fw fa-filter"></i> Map Filters</span>
+                        <span><i class="fas fa-lg fa-fw fa-filter"></i> Map Filters</span>
                         <ul id="filters" class="Vertical">
                             <li>
-                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-map-pin"></i> By State</span>
+                                <span class="dropdown"><i class="fas fa-lg fa-fw fa-map-pin"></i> By State</span>
                                 <ul class="filter state">
-                                    <li><a> Alabama</a>
+                                    <li>
+					    <a> Alabama</a>
                                     </li>
-                                    <li><a> Alaska</a>
+                                    <li>
+					    <a> Alaska</a>
                                     </li>
-                                    <li><a> Arizona</a>
+                                    <li>
+					    <a> Arizona</a>
                                     </li>
-                                    <li><a> Arkansas</a>
+                                    <li>
+					    <a> Arkansas</a>
                                     </li>
-                                    <li><a> California</a>
+                                    <li>
+					    <a> California</a>
                                     </li>
-                                    <li><a> Colorado</a>
+                                    <li>
+					    <a> Colorado</a>
                                     </li>
-                                    <li><a> Connecticut</a>
+                                    <li>
+					    <a> Connecticut</a>
                                     </li>
-                                    <li><a> D.C.</a>
+                                    <li>
+					    <a> D.C.</a>
                                     </li>
-                                    <li><a> Delaware</a>
+                                    <li>
+					    <a> Delaware</a>
                                     </li>
-                                    <li><a> Florida</a>
+                                    <li>
+					    <a> Florida</a>
                                     </li>
-                                    <li><a> Georgia</a>
+                                    <li>
+					    <a> Georgia</a>
                                     </li>
-                                    <li><a> Hawaii</a>
+                                    <li>
+					    <a> Hawaii</a>
                                     </li>
-                                    <li><a> Idaho</a>
+                                    <li>
+					    <a> Idaho</a>
                                     </li>
-                                    <li><a> Illinois</a>
+                                    <li>
+					    <a> Illinois</a>
                                     </li>
-                                    <li><a> Indiana</a>
+                                    <li>
+					    <a> Indiana</a>
                                     </li>
-                                    <li><a> Iowa</a>
+                                    <li>
+					    <a> Iowa</a>
                                     </li>
-                                    <li><a> Kansas</a>
+                                    <li>
+					    <a> Kansas</a>
                                     </li>
-                                    <li><a> Kentucky</a>
+                                    <li>
+					    <a> Kentucky</a>
                                     </li>
-                                    <li><a> Louisiana</a>
+                                    <li>
+					    <a> Louisiana</a>
                                     </li>
-                                    <li><a> Maine</a>
+                                    <li>
+					    <a> Maine</a>
                                     </li>
-                                    <li><a> Maryland</a>
+                                    <li>
+					    <a> Maryland</a>
                                     </li>
-                                    <li><a> Massachusetts</a>
+                                    <li>
+					    <a> Massachusetts</a>
                                     </li>
-                                    <li><a> Michigan</a>
+                                    <li>
+					    <a> Michigan</a>
                                     </li>
-                                    <li><a> Minnesota</a>
+                                    <li>
+					    <a> Minnesota</a>
                                     </li>
-                                    <li><a> Mississippi</a>
+                                    <li>
+					    <a> Mississippi</a>
                                     </li>
-                                    <li><a> Missouri</a>
+                                    <li>
+					    <a> Missouri</a>
                                     </li>
-                                    <li><a> Montana</a>
+                                    <li>
+					    <a> Montana</a>
                                     </li>
-                                    <li><a> Nebraska</a>
+                                    <li>
+					    <a> Nebraska</a>
                                     </li>
-                                    <li><a> Nevada</a>
+                                    <li>
+					    <a> Nevada</a>
                                     </li>
-                                    <li><a> New Hampshire</a>
+                                    <li>
+					    <a> New Hampshire</a>
                                     </li>
-                                    <li><a> New Jersey</a>
+                                    <li>
+					    <a> New Jersey</a>
                                     </li>
-                                    <li><a> New Mexico</a>
+                                    <li>
+					    <a> New Mexico</a>
                                     </li>
-                                    <li><a> New York</a>
+                                    <li>
+					    <a> New York</a>
                                     </li>
-                                    <li><a> North Carolina</a>
+                                    <li>
+					    <a> North Carolina</a>
                                     </li>
-                                    <li><a> North Dakota</a>
+                                    <li>
+					    <a> North Dakota</a>
                                     </li>
-                                    <li><a> Ohio</a>
+                                    <li>
+					    <a> Ohio</a>
                                     </li>
-                                    <li><a> Oklahoma</a>
+                                    <li>
+					    <a> Oklahoma</a>
                                     </li>
-                                    <li><a> Oregon</a>
+                                    <li>
+					    <a> Oregon</a>
                                     </li>
-                                    <li><a> Rhode Island</a>
+                                    <li>
+					    <a> Rhode Island</a>
                                     </li>
-                                    <li><a> South Carolina</a>
+                                    <li>
+					    <a> South Carolina</a>
                                     </li>
-                                    <li><a> South Dakota</a>
+                                    <li>
+					    <a> South Dakota</a>
                                     </li>
-                                    <li><a> Tennessee</a>
+                                    <li>
+					    <a> Tennessee</a>
                                     </li>
-                                    <li><a> Texas</a>
+                                    <li>
+					    <a> Texas</a>
                                     </li>
-                                    <li><a> Utah</a>
+                                    <li>
+					    <a> Utah</a>
                                     </li>
-                                    <li><a> Vermont</a>
+                                    <li>
+					    <a> Vermont</a>
                                     </li>
-                                    <li><a> Virginia</a>
+                                    <li>
+					    <a> Virginia</a>
                                     </li>
-                                    <li><a> Washington</a>
+                                    <li>
+					    <a> Washington</a>
                                     </li>
-                                    <li><a> West Virgina</a>
+                                    <li>
+					    <a> West Virgina</a>
                                     </li>
-                                    <li><a> Wisconsin</a>
+                                    <li>
+					    <a> Wisconsin</a>
                                     </li>
-                                    <li><a> Wyoming</a>
+                                    <li>
+					    <a> Wyoming</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-calendar-alt"></i> By Year</span>
+                                <span class="dropdown"><i class="fas fa-lg fa-fw fa-calendar-alt"></i> By Year</span>
                                 <ul class="filter year">
-                                    <li><a> 2018</a>
+                                    <li>
+					    <a> 2018</a>
                                     </li>
-                                    <li><a> 2017</a>
+                                    <li>
+					    <a> 2017</a>
                                     </li>
-                                    <li><a> 2016</a>
+                                    <li>
+					    <a> 2016</a>
                                     </li>
-                                    <li><a> 2015</a>
+                                    <li>
+					    <a> 2015</a>
                                     </li>
-                                    <li><a> 2014</a>
+                                    <li>
+					    <a> 2014</a>
                                     </li>
-                                    <li><a> 2013</a>
+                                    <li>
+					    <a> 2013</a>
                                     </li>
-                                    <li><a> 2012</a>
+                                    <li>
+					    <a> 2012</a>
                                     </li>
-                                    <li><a> 2011</a>
+                                    <li>
+					    <a> 2011</a>
                                     </li>
-                                    <li><a> 2010</a>
+                                    <li>
+					    <a> 2010</a>
                                     </li>
-                                    <li><a> 2009</a>
+                                    <li>
+					    <a> 2009</a>
                                     </li>
-                                    <li><a> 2008</a>
+                                    <li>
+					    <a> 2008</a>
                                     </li>
-                                    <li><a> 2007</a>
+                                    <li>
+					    <a> 2007</a>
                                     </li>
-                                    <li><a> 2006</a>
+                                    <li>
+					    <a> 2006</a>
                                     </li>
-                                    <li><a> 2005</a>
+                                    <li>
+					    <a> 2005</a>
                                     </li>
-                                    <li><a> 2004</a>
+                                    <li>
+					    <a> 2004</a>
                                     </li>
-                                    <li><a> 2003</a>
+                                    <li>
+					    <a> 2003</a>
                                     </li>
-                                    <li><a> 2002</a>
+                                    <li>
+					    <a> 2002</a>
                                     </li>
-                                    <li><a> 2001</a>
+                                    <li>
+					    <a> 2001</a>
                                     </li>
-                                    <li><a> 2000</a>
+                                    <li>
+					    <a> 2000</a>
                                     </li>
-                                    <li><a> 1999</a>
+                                    <li>
+					    <a> 1999</a>
                                     </li>
-                                    <li><a> 1998</a>
+                                    <li>
+					    <a> 1998</a>
                                     </li>
-                                    <li><a> 1997</a>
+                                    <li>
+					    <a> 1997</a>
                                     </li>
-                                    <li><a> 1996</a>
+                                    <li>
+					    <a> 1996</a>
                                     </li>
-                                    <li><a> 1995</a>
+                                    <li>
+					    <a> 1995</a>
                                     </li>
-                                    <li><a> 1994</a>
+                                    <li>
+					    <a> 1994</a>
                                     </li>
-                                    <li><a> 1993</a>
+                                    <li>
+					    <a> 1993</a>
                                     </li>
-                                    <li><a> 1992</a>
+                                    <li>
+					    <a> 1992</a>
                                     </li>
-                                    <li><a> 1991</a>
+                                    <li>
+					    <a> 1991</a>
                                     </li>
-                                    <li><a> 1990</a>
+                                    <li>
+					    <a> 1990</a>
                                     </li>
-                                    <li><a> 1989</a>
+                                    <li>
+					    <a> 1989</a>
                                     </li>
-                                    <li><a> 1988</a>
+                                    <li>
+					    <a> 1988</a>
                                     </li>
-                                    <li><a> 1987</a>
+                                    <li>
+					    <a> 1987</a>
                                     </li>
-                                    <li><a> 1986</a>
+                                    <li>
+					    <a> 1986</a>
                                     </li>
-                                    <li><a> 1985</a>
+                                    <li>
+					    <a> 1985</a>
                                     </li>
-                                    <li><a> 1984</a>
+                                    <li>
+					    <a> 1984</a>
                                     </li>
-                                    <li><a> 1983</a>
+                                    <li>
+					    <a> 1983</a>
                                     </li>
-                                    <li><a> 1982</a>
+                                    <li>
+					    <a> 1982</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-chart-pie"></i> By Statistics</span>
+                                <span class="dropdown"><i class="fas fa-lg fa-fw fa-chart-pie"></i> By Statistics</span>
                                 <ul>
                                     <li>
-                                        	<span id="charts" class="center">
-											<span class="term">Incident</span> 
-                                        <p class="menu-horizontal-line"></p>
+                                        <span id="charts" class="center">
+						<span class="term">Incident</span> 
+                                        	<p class="menu-horizontal-line"></p>
+						
+                                        	<p>
+							<span id="chart-venue"></span>
+						</p>
+                                        	<p class="menu-horizontal-line"></p>
 
-                                        <p><span id="chart-venue"></span>
-                                        </p>
-                                        <p class="menu-horizontal-line"></p>
+                                        	<p>
+							<span id="chart-legal"></span>
+                                        	</p>
+                                        	<p class="menu-horizontal-line"></p>
 
-                                        <p><span id="chart-legal"></span>
-                                        </p>
-                                        <p class="menu-horizontal-line"></p>
+                                        	<p>
+							<span id="chart-type"></span>
+                                        	</p>
+                                        	<p class="menu-horizontal-line"></p>
 
-                                        <p><span id="chart-type"></span>
-                                        </p>
-                                        <p class="menu-horizontal-line"></p>
-
-                                        <p><span id="chart-ended"></span>
-                                        </p>
-                                        <p class="menu-horizontal-line"></p>
+                                        	<p>
+							<span id="chart-ended"></span>
+                                        	</p>
+                                        	<p class="menu-horizontal-line"></p>
 
                                         	<span class="term">Suspect</span>
-                                        <p class="menu-horizontal-line"></p>
+                                        	<p class="menu-horizontal-line"></p>
 
-                                        <!--<p><span id="chart-age"></span></p>-->
-                                        <!--<p class="menu-horizontal-line"></p>-->
+                                        	<!--<p><span id="chart-age"></span></p>-->
+						<!--<p class="menu-horizontal-line"></p>-->
 
-                                        <p><span id="chart-mental-health"></span>
-                                        </p>
-                                        <p class="menu-horizontal-line"></p>
+                                        	<p>
+							<span id="chart-mental-health"></span>
+                                        	</p>
+                                        	<p class="menu-horizontal-line"></p>
 
-                                        <p><span id="chart-race"></span>
-                                        </p>
-                                        <p class="menu-horizontal-line"></p>
+                                        	<p>
+							<span id="chart-race"></span>
+                                        	</p>
+                                        	<p class="menu-horizontal-line"></p>
 
-                                        <p><span id="chart-gender"></span>
-                                        </p>
+                                        	<p>
+							<span id="chart-gender"></span>
+                                        	</p>
                                         </span>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-list"></i> By Incident</span>
+                                <span class="dropdown"><i class="fas fa-lg fa-fw fa-list"></i> By Incident</span>
                                 <ul class="list-container">
-                                    <li><span id="table"></span>
+                                    <li>
+					    <span id="table"></span>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        	<span><i class="fas fa-lg fa-fw fa-book"></i> Glossary</span>
+                        <span><i class="fas fa-lg fa-fw fa-book"></i> Glossary</span>
                         <ul>
                             <li>
                                 <p class="first last">
@@ -410,64 +510,63 @@
                                     	<span class="small light italic">Examples:</span> 
                                     	<span class="small">AR-15 variants</span>
                                 </p>
-
                             </li>
                         </ul>
                     </li>
                     <li>
-                        	<span id="credits"><i class="far fa-lg fa-fw fab fa-creative-commons"></i> Credits</span>
+                        <span id="credits"><i class="far fa-lg fa-fw fab fa-creative-commons"></i> Credits</span>
                         <ul class="Vertical">
                             <li>
-                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-search"></i> Research/Data</span>
+                                <span class="dropdown"><i class="fas fa-lg fa-fw fa-search"></i> Research/Data</span>
                                 <ul>
                                     <li>
-                                        	<a href="https://www.motherjones.com/politics/2012/12/mass-shootings-mother-jones-full-data/" target="_blank">Mother Jones</a>
+                                        <a href="https://www.motherjones.com/politics/2012/12/mass-shootings-mother-jones-full-data/" target="_blank">Mother Jones</a>
                                     </li>
                                     <li>
-                                        	<a href="http://www.gunviolencearchive.org/" target="_blank">Gun Violence Archive</a>
+                                        <a href="http://www.gunviolencearchive.org/" target="_blank">Gun Violence Archive</a>
                                     </li>
                                     <li>
-                                        	<a href="http://timelines.latimes.com/deadliest-shooting-rampages/" target="_blank">L.A Times</a>
+                                        <a href="http://timelines.latimes.com/deadliest-shooting-rampages/" target="_blank">L.A Times</a>
                                     </li>
                                     <li>
-                                        	<a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>
+                                        <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                	<span class="dropdown"><i class="fas fa-lg fa-fw fa-code"></i> Code</span>
+                                <span class="dropdown"><i class="fas fa-lg fa-fw fa-code"></i> Code</span>
                                 <ul>
                                     <li>
-                                        	<a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank">Google Maps Javascript API</a>
+                                        <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank">Google Maps Javascript API</a>
                                     </li>
                                     <li>
-                                        	<a href="https://developers.google.com/maps/documentation/javascript/marker-clustering" target="_blank">MarkerClusterer Library V3 for Google Maps</a>
+                                        <a href="https://developers.google.com/maps/documentation/javascript/marker-clustering" target="_blank">MarkerClusterer Library V3 for Google Maps</a>
                                     </li>
                                     <li>
-                                        	<a href="http://api.jquery.com/" target="_blank">JQuery Library</a>
+                                        <a href="http://api.jquery.com/" target="_blank">JQuery Library</a>
                                     </li>
                                     <li>
-                                        	<a href="http://mmenu.frebsite.nl/" target="_blank">JQuery mmenu plugin</a>
+                                        <a href="http://mmenu.frebsite.nl/" target="_blank">JQuery mmenu plugin</a>
                                     </li>
                                     <li>
-                                        	<a href="https://fontawesome.com/" target="_blank">Font Awesome 5</a>
+                                        <a href="https://fontawesome.com/" target="_blank">Font Awesome 5</a>
                                     </li>
                                     <li>
-                                        	<a href="https://github.com/tigt/mini-svg-data-uri" target="_blank">Taylor Hunt&apos;s mini-svg-data-uri.js</a>
+                                        <a href="https://github.com/tigt/mini-svg-data-uri" target="_blank">Taylor Hunt&apos;s mini-svg-data-uri.js</a>
                                     </li>
                                     <li>
-                                        	<a href="https://fonts.google.com/specimen/Roboto" target="_blank">Google Fonts</a>
+                                        <a href="https://fonts.google.com/specimen/Roboto" target="_blank">Google Fonts</a>
                                     </li>
                                     <li>
-                                        	<a href="https://developers.google.com/chart/interactive/docs/reference" target="_blank">Google Charts API</a>
+                                        <a href="https://developers.google.com/chart/interactive/docs/reference" target="_blank">Google Charts API</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                	<span class="dropdown"><i class="far fa-lg fa-fw fa-hdd"></i> Hosting</span>
+                                <span class="dropdown"><i class="far fa-lg fa-fw fa-hdd"></i> Hosting</span>
                                 <ul>
                                     <li>
-                                        	<a href="https://docs.google.com/spreadsheets/d/1BCirA2bPNdLBt7WT2wfNF_tw19PK3fQo-j51MKeQ9sc/edit?usp=sharing" target="_blank">Dataset on Google Sheets</a>
+                                        <a href="https://docs.google.com/spreadsheets/d/1BCirA2bPNdLBt7WT2wfNF_tw19PK3fQo-j51MKeQ9sc/edit?usp=sharing" target="_blank">Dataset on Google Sheets</a>
                                     </li>
                                     <li id="hostlink"></li>
                                 </ul>
@@ -475,7 +574,7 @@
                         </ul>
                     </li>
                     <li>
-                        	<span><i class="far fa-lg fa-fw fa-question-circle"></i> Help</span>
+                        <span><i class="far fa-lg fa-fw fa-question-circle"></i> Help</span>
                         <ul>
                             <li>
                                 <p class="first last">
@@ -491,34 +590,30 @@
                                 <p class="first last">
                                     	<span class="def">General e.g. &quot;<span class="italic">Seattle</span>&quot; or &quot;<span class="italic">90034</span>&quot;</span>
                                 </p>
-
                                 <p class="menu-horizontal-line"></p>
 
                                 <p class="first last">
                                     	<span class="term">Charts:</span> 
                                     	<span class="def">Charts and legends are links that will filter the map. Tags on the  incidents themselves will reload the map with that filter.</span>
                                 </p>
-
                                 <p class="menu-horizontal-line"></p>
 
                                 <p class="first last">
                                     	<span class="term">Reset map:</span> 
                                     	<span class="def">You may reset the map to the full statistics with the &quot;Reset Map&quot; button at the bottom of the menu.</span>
                                 </p>
-
                                 <p class="menu-horizontal-line"></p>
 
                                 <p class="first last" style="padding-bottom: 23px;margin-bottom: 0;">
                                     	<span class="term">Google maps link:</span> 
                                     	<span class="def">There is a direct link to google maps at the bottom of the data card, if you are interested in exploring 3D, Satallite or 360 degree views of the incident location.</span>
                                 </p>
-
                             </li>
                             <li>
-                                	<a href="javascript:alert('coming soon')" target="_blank"><i class="fas fa-lg fa-fw fa-plus"></i> Add a new shooting</a>
+                                <a href="javascript:alert('coming soon')" target="_blank"><i class="fas fa-lg fa-fw fa-plus"></i> Add a new shooting</a>
                             </li>
                             <li>
-                                	<a href="javascript:alert('coming soon')" target="_blank"><i class="fas fa-lg fa-fw fa-comment"></i> Contact Us About Error</a>
+                                <a href="javascript:alert('coming soon')" target="_blank"><i class="fas fa-lg fa-fw fa-comment"></i> Contact Us About Error</a>
                             </li>
                         </ul>
                     </li>
@@ -556,13 +651,13 @@
                             </div>
                             <div class="card-handle-outer hide">
                                 <div class="card-handle-text text-truncate">
-                                    <a href="#/" title="Reset map" class="reset-map">
-                                        	<i class="fas fa-fw fa-undo"></i>
-                                    </a>
-                                    	<span class="card-filter-icon">
-										<i class="fas fa-fw fa-filter"></i>
-									</span> 
-                                    	<span id="filter-on"></span>
+					<a href="#/" title="Reset map" class="reset-map">
+						<i class="fas fa-fw fa-undo"></i>
+					</a>
+					<span class="card-filter-icon">
+						<i class="fas fa-fw fa-filter"></i>
+					</span>
+					<span id="filter-on"></span>
                                 </div>
                             </div>
                         </div>
@@ -570,34 +665,39 @@
                         <!-- X (close card) -->
                         <div id="card-close-x" class="card-close-x hide">
                             <div>
-                                <div title="Close map" role="button" tabindex="0" class="card-close-x-inner search-icon search-icon-close close">&times;</div>
+				<div title="Close map" role="button" tabindex="0" class="card-close-x-inner search-icon search-icon-close close">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+						<path fill="rgba(0,0,0,.5)" d="M217.5 256l137.2-137.2c4.7-4.7 4.7-12.3 0-17l-8.5-8.5c-4.7-4.7-12.3-4.7-17 0L192 230.5 54.8 93.4c-4.7-4.7-12.3-4.7-17 0l-8.5 8.5c-4.7 4.7-4.7 12.3 0 17L166.5 256 29.4 393.2c-4.7 4.7-4.7 12.3 0 17l8.5 8.5c4.7 4.7 12.3 4.7 17 0L192 281.5l137.2 137.2c4.7 4.7 12.3 4.7 17 0l8.5-8.5c4.7-4.7 4.7-12.3 0-17L217.5 256z">
+						</path>
+					</svg>
+				</div>
                             </div>
                         </div>
-                        <!-- popup card -->
+                        <!-- popup card content -->
                         <div class="card-popup hide">
                             <div class="card-underscroll-header">
                                 <!-- underscroll group -->
                                 <div class="card-underscroll-title-group">
-                                    <!-- casename/title -->
+                                    <!-- title -->
                                     <div class="card-title card-title-truncate bold">
-                                        	<span class="card-spinner show" style="color:rgba(0,0,0,.5)">
-											<i class="fas fa-spinner fa-pulse"></i> Loading...
-										</span>
-                                        	<span class="card-main-title">
-											<span class="data-fatalities"></span><span class="data-injured"></span>
-                                        </span>
+					<span class="card-spinner show" style="color:rgba(0,0,0,.5)">
+						<i class="fas fa-spinner fa-pulse"></i> Loading...
+					</span>
+					<span class="card-main-title">
+						<span class="data-fatalities"></span><span class="data-injured"></span>
+					</span>
                                     </div>
                                     <!-- sub-titles -->
                                     <div class="card-title-sub-group">
                                         <!-- location / date -->
-                                        	<span class="card-location-date-group">
-											<!-- location (city, state) --> 
-											<span class="data-location"> </span>
-                                        <!-- date -->
-                                        	<span class="card-date">
-												<span class="data-date bold"> </span>
-                                        </span>
-                                        </span>
+					<span class="card-location-date-group">
+						<!-- location (city, state) --> 
+						<span class="data-location"> </span>
+						<!-- date -->
+						<span class="card-date bold">
+							<span class="data-date"> </span>
+						</span>
+					</span>
                                     </div>
                                 </div>
                             </div>
@@ -613,8 +713,8 @@
                                 <!-- top stats (above the fold) -->
                                 <div class="card-top-stats">
                                     <!-- casename -->
-                                    <div class="card-casename">
-                                        	<span class="data-casename bold"> </span> 
+                                    <div class="card-casename bold">
+                                        	<span class="data-casename"> </span> 
                                     </div>
                                 </div>
 
@@ -632,11 +732,9 @@
                                 </div>
                                 <!-- list of victims -->
                                 <div class="card-details">
-                                    <ol class="card-victim-list">
-
-                                    </ol>
+					<ol class="card-victim-list">
+					</ol>
                                 </div>
-
                                 <!-- shooters header -->
                                 <div class="card-section-subheader card-section-subheader-large-text">
                                     	<span>Shooter</span><span class="data-shooter-plural"></span>
