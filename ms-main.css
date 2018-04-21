@@ -310,11 +310,6 @@ body {
 .search-icon:focus {
     outline:none
 }
-.search-icon.search-icon-location-fab {
-    background-position:-74px -2px;
-    height:60px;
-    width:60px
-}
 .search-searchbox {
     top:0;
     left:0;
@@ -493,23 +488,6 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
     text-decoration: none;
     text-align: center;
     color: #3A84DF
-}
-@media only screen and (max-height:182px) {
-    .card-my-location-fab {
-        display:none
-    }
-}
-.card-close-x-outer, .card-my-location-fab-outer {
-    right:76px;
-    width:0
-}
-.card-my-location-fab .card-my-location-fab-outer {
-    top:-76px;
-    position:absolute;
-    z-index:2
-}
-.card-my-location-fab .card-my-location-fab-inner {
-    cursor:pointer
 }
 .card-close-x-outer {
     top:14px;
