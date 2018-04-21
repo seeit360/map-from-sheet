@@ -301,34 +301,19 @@ body {
 }
 /*icons*/
  .search-searchbox .search-clear, .search-icon {
-    /*background-image:url(../images/mobile9.png);
-    background-size:264px 748px;*/
-    height:24px;
-    width:24px;
+    height: 1.2em;
+    width: 1.2em;
+    line-height: 1.2em;
     margin:auto;
     display:inline-block
 }
-@media (-webkit-min-device-pixel-ratio:1.2), (min-resolution:1.2dppx), (min-resolution:116dpi) {
-    .search-searchbox .search-clear, .search-icon {
-        /*background-image:url(../images/mobile9_2x.png)*/
-    }
-}
-.search-icon {
+.search-icon:focus {
     outline:none
 }
 .search-icon.search-icon-location-fab {
     background-position:-74px -2px;
     height:60px;
     width:60px
-}
-.search-icon.search-icon-location-fab:active {
-    background-position:-202px -2px
-}
-.search-searchbox .search-clear, .search-icon.search-icon-close {
-    background-position:0 -72px
-}
-.search-icon.search-icon-hamburger {
-    background-position:-48px -48px
 }
 .search-searchbox {
     top:0;
@@ -444,7 +429,8 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"], html[dir="rtl"] .search-sear
     line-height:0
 }
 .search-searchbox .search-close {
-    padding:11px 12px
+    padding:12px;
+    line-height: .2em
 }
 html[dir="ltr"] .search-searchbox input[dir="rtl"] {
     padding-right:22px
@@ -454,8 +440,9 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
     font:27px/13px arial, sans-serif
 }
 .search-close .search-clear {
-    color:#a1b9ed;
-    cursor:pointer
+    cursor: pointer;
+    height: 1.2rem;
+    width: 1.2rem
 }
 .search-close:hover .search-clear, .search-close:focus .search-clear {
     color:#36c
@@ -532,7 +519,6 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
 .card-close-x-inner {
     cursor:pointer;
     color: transparent;
-    font: 27px/13px arial, sans-serif
 }
 .card-close-x {
     position: absolute;
