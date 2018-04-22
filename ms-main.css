@@ -448,9 +448,6 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
     cursor:pointer;
     padding:0 4px
 }
-.search-close.hide{
-    display:none
-}
 .search-close:hover {
     text-decoration:none
 }
@@ -472,8 +469,8 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
 .search-searchbox-visibility-container {
     max-width:640px
 }
-#hostlink img {
-    margin-bottom:-25px
+.search-clear.hide{
+    display:none
 }
 /* card */
  .card-body.scrollable {
