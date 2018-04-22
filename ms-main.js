@@ -2157,6 +2157,12 @@ $(document).ready(function() {
         API.close();
         API.closeAllPanels();
     });
+    // show hide the cancel x on searchbar
+    $('.search-searchboxinput').on('focus', function(){
+	$('.search-clear').removeClass('hide');
+    }).on('blur', function(){
+    	$('.search-clear').addClass('hide');
+    });
 
     // x on search bar, card
     $('.close').on('click', closeCard);
