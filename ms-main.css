@@ -448,6 +448,9 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
     cursor:pointer;
     padding:0 4px
 }
+.search-close.hide{
+    display:none
+}
 .search-close:hover {
     text-decoration:none
 }
