@@ -1504,7 +1504,7 @@ Shooting.prototype.precacheImage_ = function(a) {
     $(function() {
         "use strict";
         $.each(a, function(i) {
-            $("<img/>").attr("src", a[i])
+            $("<img/>").attr("src", a[i]).appendTo('.card-cache-image-repository')
         });
 	this.imgLoaded = true
     })
