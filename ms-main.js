@@ -179,6 +179,8 @@ function initMap() {
     // show hide the cancel x on autocomplete searchbar based on keypress/blur
     $('.search-searchboxinput').on('keypress',function(){
 	$x = $('.search-clear');
+	    consloe.log('keypress!');
+	    console.log($(this.val()));
 	if ($(this).val() == ''){
 	    $x.addClass('hide')
 	}else{
