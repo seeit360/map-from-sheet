@@ -420,9 +420,6 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"], html[dir="rtl"] .search-sear
 .search-searchbox .search-clear {
     color:transparent
 }
-.search-searchbox .search-b {
-    line-height:0
-}
 .search-searchbox .search-close {
     padding:12px;
     line-height: .2em
@@ -468,9 +465,6 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
 .search-a {
     width:100%;
     padding:4px 6px 0
-}
-.search-a, .search-b {
-    vertical-align:top
 }
 .search-searchbox-visibility-container {
     max-width:640px
