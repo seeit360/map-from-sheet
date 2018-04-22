@@ -2157,7 +2157,7 @@ $(document).ready(function() {
     $('.close').on('click', closeCard);
 	
     // x searchbar
-    $('.search-close').on('click'function(e){
+    $('.search-close').on('click',function(e){
 	e.preventDefault();
 	closeCard();
 	$('.search-clear').addClass('hide');
