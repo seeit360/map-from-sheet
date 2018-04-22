@@ -171,8 +171,9 @@ function initMap() {
 
     // AUTOCOMPLETE INPUT ELEMENT
     autocomplete = new google.maps.places.Autocomplete(document.getElementById('search-searchboxinput'), {
-            types: ['geocode']
-        });
+	types: ['(cities)'],
+  	componentRestrictions: {country: 'us'}
+    });
     autocomplete.bindTo('bounds', map);
 	
     // show hide the cancel x on autocomplete searchbar based on keypress/blur
