@@ -2107,8 +2107,7 @@ $(document).ready(function() {
                 }, {
                     position: 'bottom',
                     content: [
-                        '<a class="reset-map"><i class="fas fa-lg fa-fw fa-undo"></i> Reset Map</a>',
-                        '<a id="my-location" class="hide"><i class="fas fa-lg fa-fw fa-street-view"></i> Near Me</a>'
+                        '<a class="reset-map"><i class="fas fa-lg fa-fw fa-undo"></i> Reset Map</a>'
                     ]
                 }
             ],
