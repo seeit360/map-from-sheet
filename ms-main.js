@@ -171,7 +171,7 @@ function initMap() {
 
     // AUTOCOMPLETE INPUT ELEMENT
     autocomplete = new google.maps.places.Autocomplete(document.getElementById('search-searchboxinput'), {
-	types: ['(cities)','(regions)'],
+	types: ['geocode'],
   	componentRestrictions: {country: 'us'}
     });
     autocomplete.bindTo('bounds', map);
