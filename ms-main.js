@@ -177,16 +177,15 @@ function initMap() {
     autocomplete.bindTo('bounds', map);
 	
     // show hide the cancel x on autocomplete searchbar based on keypress/blur
-    $('.search-searchboxinput').on('keypress',function(){
+    $('.search-searchboxinput').on('keydown',function(e){
 	$x = $('.search-clear');
-	    console.log('keypress!');
-	    console.log($(this.val()));
 	if ($(this).val() !== ''){
+	    console.log('[DEV] Typing: %s',$(this).val());
 	    $x.removeClass('hide')
 	}else{
 	    $x.addClass('hide')
 	}
-    }).on('blur', function(){
+    }).on('blur', function(e){
     	$('.search-clear').addClass('hide');
     });
 
