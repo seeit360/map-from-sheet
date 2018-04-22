@@ -473,6 +473,32 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
 .search-clear.hide{
     display:none
 }
+/*override default search result container styles*/
+.pac-item {
+    padding: 6px 4px;
+    font-size: 1em;
+    color: #999;
+}
+.pac-icon {
+    margin-left: 6px;
+}
+.pac-item-query {
+    font-size: 1em;
+    padding-right: 3px;
+    color: rgba(51, 51, 51, 0.7);
+}
+.pac-logo:after {
+    content: " ";
+    padding: 0;
+    height: 0;
+    text-align: right;
+    display: block;
+    background-image: initial;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 0 0;
+}
+
 /* card */
  .card-body.scrollable {
     -webkit-overflow-scrolling:touch;
