@@ -437,7 +437,9 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
 .search-close .search-clear {
     cursor: pointer;
     height: 1.2rem;
-    width: 1.2rem
+    width: 1.2rem;
+    margin: 0;
+    padding: 0
 }
 .search-close:hover .search-clear, .search-close:focus .search-clear {
     color:#36c
