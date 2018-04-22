@@ -422,7 +422,8 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"], html[dir="rtl"] .search-sear
 }
 .search-searchbox .search-close {
     padding:12px;
-    line-height: .2em
+    line-height: .2em;
+    width:20px
 }
 html[dir="ltr"] .search-searchbox input[dir="rtl"] {
     padding-right:22px
