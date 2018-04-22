@@ -2158,7 +2158,7 @@ $(document).ready(function() {
         API.closeAllPanels();
     });
     // show hide the cancel x on searchbar
-    $('.search-searchboxinput').on('focus', function(){
+    $('.search-searchboxinput').on('focus','keypress', function(){
 	$('.search-close').removeClass('hide');
     }).on('blur', function(){
     	$('.search-close').addClass('hide');
