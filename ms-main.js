@@ -2159,9 +2159,9 @@ $(document).ready(function() {
     });
     // show hide the cancel x on searchbar
     $('.search-searchboxinput').on('focus','keypress', function(){
-	$('.search-close').removeClass('hide');
+	$('.search-clear').removeClass('hide');
     }).on('blur', function(){
-    	$('.search-close').addClass('hide');
+    	$('.search-clear').addClass('hide');
     });
 
     // x on search bar, card
