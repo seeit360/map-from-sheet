@@ -175,17 +175,6 @@ function initMap() {
   	componentRestrictions: {country: 'us'}
     });
     autocomplete.bindTo('bounds', map);
-	
-    // show hide the cancel x on autocomplete searchbar based on keypress/blur
-    $('#search-searchboxinput').on('keydown',function(e){
-	var $x = $('.search-clear');
-	var $val = $(this).val();
-	if ($val != ''){
-	    $x.removeClass('hide')
-	}else{
-	    $x.addClass('hide')
-	}
-    });
 
     // AUTOCOMPLETE LISTENER ON PLACE CHANGED
     google.maps.event.addListener(autocomplete, 'place_changed', placeChanged);
@@ -2165,12 +2154,24 @@ $(document).ready(function() {
     });
 
     // x card
-    $('.close-card').on('click', closeCard);
+    $('.close').on('click', closeCard);
 	
+    // x searchbar
     $('.search-close').on('click'function(e){
 	e.preventDefault();
 	closeCard();
 	$('.search-clear').addClass('hide');
+    });
+	
+    // show hide the cancel x on autocomplete searchbar based on keydown
+    $('#search-searchboxinput').on('keydown',function(e){
+	var $x = $('.search-clear');
+	var $val = $(this).val();
+	if ($val != ''){
+	    $x.removeClass('hide')
+	}else{
+	    $x.addClass('hide')
+	}
     });
 
     // used in mmenu to prevent the page from interpreting a link as submenu choice
