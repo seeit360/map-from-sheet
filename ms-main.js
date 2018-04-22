@@ -174,6 +174,18 @@ function initMap() {
             types: ['geocode']
         });
     autocomplete.bindTo('bounds', map);
+	
+    // show hide the cancel x on autocomplete searchbar based on keypress/blur
+    $('.search-searchboxinput').on('keypress',function(){
+	$x = $('.search-clear');
+	if ($(this).val() == ''){
+	    $x.addClass('hide')
+	}else{
+	    $x.removeClass('hide')
+	}
+    }).on('blur', function(){
+    	$('.search-clear').addClass('hide');
+    });
 
     // AUTOCOMPLETE LISTENER ON PLACE CHANGED
     google.maps.event.addListener(autocomplete, 'place_changed', placeChanged);
@@ -2156,12 +2168,6 @@ $(document).ready(function() {
         runQuery();
         API.close();
         API.closeAllPanels();
-    });
-    // show hide the cancel x on searchbar
-    $('.search-searchboxinput').on('focus','keypress', function(){
-	$('.search-clear').removeClass('hide');
-    }).on('blur', function(){
-    	$('.search-clear').addClass('hide');
     });
 
     // x on search bar, card
