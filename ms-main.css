@@ -765,6 +765,7 @@ force hide of number column.
     margin: 0 auto 0 -24px;
     padding: 0 0 0 24px;
     width: 100%;
+    cursor: default;
 }
 #charts.mobile span[id^="chart"] > div > div {
     left: -48px;
