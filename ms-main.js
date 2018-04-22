@@ -1314,6 +1314,7 @@ function drawMap(response, el, kind, title) {
 function Shooting() {
     this.ready_ = false;
     this.query_ = false;
+    this.imgLoaded_ = false;
 }
 Shooting.prototype.loadMinimumValues = function(o, n) {
     if (this.ready_) return; //means its already been run
@@ -1499,13 +1500,16 @@ Shooting.prototype.arrToStr = function(a) {
 //**Private**//
 Shooting.prototype.precacheImage_ = function(a) {
     if (!a) return;
+    if (this.imgLoaded) return;
     $(function() {
         "use strict";
         $.each(a, function(i) {
             $("<img/>").attr("src", a[i])
-        })
+        });
+	this.imgLoaded = true
     })
 }
+
 //**Private**//
 Shooting.prototype.getTagColor_ = function(s, id) {
     if (id == 'Year') {
