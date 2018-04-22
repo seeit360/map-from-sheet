@@ -185,8 +185,6 @@ function initMap() {
 	}else{
 	    $x.addClass('hide')
 	}
-    }).on('blur', function(e){
-    	$('.search-clear').addClass('hide');
     });
 
     // AUTOCOMPLETE LISTENER ON PLACE CHANGED
@@ -2158,12 +2156,6 @@ $(document).ready(function() {
         API.open();
     });
 
-    // back (currently unused)
-    $('.menu-back').click(function(e) {
-        e.preventDefault();
-        API.closeAllPanels();
-    });
-
     // reset map click
     $('.reset-map').click(function(e) {
         e.preventDefault();
@@ -2172,8 +2164,14 @@ $(document).ready(function() {
         API.closeAllPanels();
     });
 
-    // x on search bar, card
-    $('.close').on('click', closeCard);
+    // x card
+    $('.close-card').on('click', closeCard);
+	
+    $('.search-close').on('click'function(e){
+	e.preventDefault();
+	closeCard();
+	$('.search-clear').addClass('hide');
+    });
 
     // used in mmenu to prevent the page from interpreting a link as submenu choice
     $('.a').attr({
