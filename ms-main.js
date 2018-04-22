@@ -1379,6 +1379,9 @@ Shooting.prototype.addValues = function(o) {
 }
 
 //**Private Strings**//
+Shooting.prototype.WPNAME_ = "Wikipedia";
+Shooting.prototype.WPHREF_ = "https://wikipedia.org";
+Shooting.prototype.WPTITLE_ = "Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation.";
 Shooting.prototype.GVANAME_ = "Gun Violence Archive";
 Shooting.prototype.GVAHREF_ = "http://www.gunviolencearchive.org/";
 Shooting.prototype.GVATITLE_ = "Gun Violence Archive (GVA) is a not for profit corporation formed in 2013 to provide free online public access to accurate information about gun-related violence in the United States.";
@@ -1550,13 +1553,20 @@ Shooting.prototype.setInfoWindowContent_ = function() {
 }
 //**Private**//
 Shooting.prototype.setCredit_ = function(s) {
-    if (!s) return;
-    var a = (s == 'GVA') ? this.GVATITLE_ : this.MOJOTITLE_;
-    this.credit_title = a;
-    var b = (s == 'GVA') ? this.GVAHREF_ : this.MOJOHREF_;
-    this.credit_href = b;
-    var c = (s == 'GVA') ? this.GVANAME_ : this.MOJONAME_;
-    this.credit_name = c;
+	if (!s) return;
+	if(s == 'GVA'){
+	    this.credit_title = this.GVATITLE_;
+	    this.credit_href = this.GVAHREF_;
+	    this.credit_name = this.GVANAME_;
+	} else if (s == 'MOJO'){
+	    this.credit_title = this.MOJOTITLE_;
+	    this.credit_href = this.MOJOHREF_;
+	    this.credit_name = this.MOJONAME_;		  
+	} else if (s == 'WP'){
+	    this.credit_title = this.WPTITLE_;
+	    this.credit_href = this.WPHREF_;
+	    this.credit_name = this.WPNAME_;	
+	}
 }
 //**Private**//
 Shooting.prototype.setCity_ = function(s) {
