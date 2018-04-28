@@ -528,7 +528,7 @@ html[dir="ltr"] .search-searchbox input[dir="rtl"] {
     z-index: 4
 }
 .card-tags {
-    margin: 1em
+    margin: .8em
 }
 .card-tag {
     color: rgb(255, 255, 255);
