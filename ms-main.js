@@ -524,6 +524,7 @@ function deleteAllMarkers() {
 //--ADD ACTIVE MARKER--//
 //--called by populateMap() -> marker,"click"--//
 var g_activeMarkerListener;
+var g_currZoom;
 
 function addActiveMarker(pos) {
     var svg = targetShapeSvgUri();
@@ -543,7 +544,12 @@ function addActiveMarker(pos) {
     // make a list of the active marker so we can delete the active marker overlay as necessary
     activeMarkers.push(marker);
 
+    // close the card when zoomout is 12 or less (prevents infowindow actions from being triggered while zoomed out)  
     g_activeMarkerListener = google.maps.event.addListener(map, 'zoom_changed', function(event) {
+        g_currZoom = map.getZoom();
+        if(g_currZoom < 13){
+            closeCard();
+        }
         map.panTo(pos);
     });
 }
