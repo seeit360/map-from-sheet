@@ -544,10 +544,10 @@ function addActiveMarker(pos) {
     // make a list of the active marker so we can delete the active marker overlay as necessary
     activeMarkers.push(marker);
 
-    // close the card when zoomout is 12 or less (prevents infowindow actions from being triggered while zoomed out)  
+    // close the card when zoomout is 11 or less (prevents infowindow actions from being triggered while zoomed out)  
     g_activeMarkerListener = google.maps.event.addListener(map, 'zoom_changed', function(event) {
         g_currZoom = map.getZoom();
-        if(g_currZoom < 13){
+        if(g_currZoom < 12){
             closeCard();
         }
         map.panTo(pos);
