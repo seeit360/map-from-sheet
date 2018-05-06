@@ -62,7 +62,8 @@ var g_mobilecheck = function() {
     return check;
 };
 
- function onReady(callback) {
+//timer function for the loading animation
+function onReady(callback) {
     var intervalID = window.setInterval(checkReady, 500);
 
     function checkReady() {
@@ -72,10 +73,11 @@ var g_mobilecheck = function() {
         }
     }
 }
-
+// switch function to show/hide the loading animation
 function show(id, value) {
     document.getElementById(id).style.display = value ? 'block' : 'none';
 }
+
 // initial onready call for loading animation interval check
 onReady(function () {
     //show('page', true);
