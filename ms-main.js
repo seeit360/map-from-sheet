@@ -345,8 +345,7 @@ function fixCluster() {
     }
     g_clusterTimer = window.setTimeout(function() {
         if (g_first) {
-            map.setZoom(map.getZoom() + 1);
-            map.setZoom(map.getZoom() - 1);
+            markerclusterer.repaint();
             g_first = false;
 	    // hide the loading animation
             onReady(function () {
