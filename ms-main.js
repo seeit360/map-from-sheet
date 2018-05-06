@@ -62,6 +62,25 @@ var g_mobilecheck = function() {
     return check;
 };
 
+ function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 500);
+
+    function checkReady() {
+        if (markers.length !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+// initial onready call for loading animation interval check
+onReady(function () {
+    //show('page', true);
+    show('loading', false);
+});
 
 //--INIT MAP--//
 //--called by google.maps.event.addDomListener()--//
@@ -171,9 +190,11 @@ function initMap() {
 
     // AUTOCOMPLETE INPUT ELEMENT
     autocomplete = new google.maps.places.Autocomplete(document.getElementById('search-searchboxinput'), {
-	types: ['geocode'],
-  	componentRestrictions: {country: 'us'}
-    });
+            types: ['geocode'],
+            componentRestrictions: {
+                country: 'us'
+            }
+        });
     autocomplete.bindTo('bounds', map);
 
     // AUTOCOMPLETE LISTENER ON PLACE CHANGED
@@ -326,6 +347,10 @@ function fixCluster() {
             map.setZoom(map.getZoom() + 1);
             map.setZoom(map.getZoom() - 1);
             g_first = false;
+            onReady(function () {
+                //show('page', true);
+                show('loading', false);
+            });
         }
     }, 500);
 }
@@ -360,10 +385,10 @@ function setMarkerClusterStyle() {
 //--called by runQuery()--//
 
 function setColor(n) {
-    var n = (n === undefined) ? -1 : n;
+    var n_ = (n === undefined) ? -1 : n;
     //set global var g_fillColor once per query
-    g_fillColor = convertNumToColor(n);
-    g_colorNum = n;
+    g_fillColor = convertNumToColor(n_);
+    g_colorNum = n_;
 
     setMarkerClusterStyle();
 }
@@ -519,6 +544,11 @@ function deleteAllMarkers() {
 
     //reset bounds to init values
     bounds = new google.maps.LatLngBounds();
+    
+    // show the loading animation
+    onReady(function () {
+        show('loading', true);
+    });
 }
 
 //--ADD ACTIVE MARKER--//
@@ -544,10 +574,9 @@ function addActiveMarker(pos) {
     // make a list of the active marker so we can delete the active marker overlay as necessary
     activeMarkers.push(marker);
 
-    // close the card when zoomout is 11 or less (prevents infowindow actions from being triggered while zoomed out)  
     g_activeMarkerListener = google.maps.event.addListener(map, 'zoom_changed', function(event) {
         g_currZoom = map.getZoom();
-        if(g_currZoom < 12){
+        if (g_currZoom < 12) {
             closeCard();
         }
         map.panTo(pos);
@@ -1503,7 +1532,6 @@ Shooting.prototype.arrToStr = function(a) {
     }
     return b
 }
-
 //**Private**//
 Shooting.prototype.precacheImage_ = function(a) {
     if (!a) return;
@@ -1513,10 +1541,9 @@ Shooting.prototype.precacheImage_ = function(a) {
         $.each(a, function(i) {
             $("<img/>").attr("src", a[i]).appendTo('.card-cache-image-repository')
         });
-	this.imgLoaded = true
+        this.imgLoaded = true
     })
 }
-
 //**Private**//
 Shooting.prototype.getTagColor_ = function(s, id) {
     if (id == 'Year') {
@@ -1564,20 +1591,20 @@ Shooting.prototype.setInfoWindowContent_ = function() {
 }
 //**Private**//
 Shooting.prototype.setCredit_ = function(s) {
-	if (!s) return;
-	if(s == 'GVA'){
-	    this.credit_title = this.GVATITLE_;
-	    this.credit_href = this.GVAHREF_;
-	    this.credit_name = this.GVANAME_;
-	} else if (s == 'MOJO'){
-	    this.credit_title = this.MOJOTITLE_;
-	    this.credit_href = this.MOJOHREF_;
-	    this.credit_name = this.MOJONAME_;		  
-	} else if (s == 'WP'){
-	    this.credit_title = this.WPTITLE_;
-	    this.credit_href = this.WPHREF_;
-	    this.credit_name = this.WPNAME_;	
-	}
+    if (!s) return;
+    if (s == 'GVA') {
+        this.credit_title = this.GVATITLE_;
+        this.credit_href = this.GVAHREF_;
+        this.credit_name = this.GVANAME_;
+    } else if (s == 'MOJO') {
+        this.credit_title = this.MOJOTITLE_;
+        this.credit_href = this.MOJOHREF_;
+        this.credit_name = this.MOJONAME_;
+    } else if (s == 'WP') {
+        this.credit_title = this.WPTITLE_;
+        this.credit_href = this.WPHREF_;
+        this.credit_name = this.WPNAME_;
+    }
 }
 //**Private**//
 Shooting.prototype.setCity_ = function(s) {
@@ -2161,23 +2188,23 @@ $(document).ready(function() {
 
     // x card
     $('.close').on('click', closeCard);
-	
+
     // x searchbar
-    $('.search-close').on('click',function(e){
-	e.preventDefault();
-	closeCard();
-	$('.search-clear').addClass('hide');
+    $('.search-close').on('click', function(e) {
+        e.preventDefault();
+        closeCard();
+        $('.search-clear').addClass('hide');
     });
-	
+
     // show hide the cancel x on autocomplete searchbar based on keydown
-    $('#search-searchboxinput').on('keydown',function(e){
-	var $x = $('.search-clear');
-	var $val = $(this).val();
-	if ($val != ''){
-	    $x.removeClass('hide')
-	}else{
-	    $x.addClass('hide')
-	}
+    $('#search-searchboxinput').on('keydown', function(e) {
+        var $x = $('.search-clear');
+        var $val = $(this).val();
+        if ($val != '') {
+            $x.removeClass('hide')
+        } else {
+            $x.addClass('hide')
+        }
     });
 
     // used in mmenu to prevent the page from interpreting a link as submenu choice
