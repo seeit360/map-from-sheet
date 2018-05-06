@@ -80,7 +80,6 @@ function show(id, value) {
 
 // initial onready call for loading animation interval check
 onReady(function () {
-    //show('page', true);
     show('loading', false);
 });
 
@@ -349,8 +348,8 @@ function fixCluster() {
             map.setZoom(map.getZoom() + 1);
             map.setZoom(map.getZoom() - 1);
             g_first = false;
+	    // hide the loading animation
             onReady(function () {
-                //show('page', true);
                 show('loading', false);
             });
         }
